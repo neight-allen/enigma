@@ -13,12 +13,12 @@ attr_reader :key, :date, :message
 
   def encrypt(message)
     encryptor = Encryptor.new(key, date)
-      encryptor.encrypt(message)
+    encryptor.encrypt(message)
   end
-    #
+
   def decrypt(message)
     decryptor = Decryptor.new(key, date)
-      decryptor.decrypt(message)
+    decryptor.decrypt(message)
   end
 
   def crack

@@ -14,8 +14,13 @@ class DecryptorTest < Minitest::Test
   def test_translate_outputs_array_of_letter_corresponding_index
     decryptor = Decryptor.new(KeyGenerator.new("12345"), DateOffsetCalculator.new("081995"))
     translated_message = decryptor.translate("yo, you figured it out fam :)")
+    expected_translated_message = [
+      89, 79, 12, 0, 89, 79, 85, 0, 70, 73,
+      71, 85, 82, 69, 68, 0, 73, 84, 0, 79,
+      85, 84, 0, 70, 65, 77, 0, 26, 9
+    ]
 
-    assert_equal [89, 79, 12, 0, 89, 79, 85, 0, 70, 73, 71, 85, 82, 69, 68, 0, 73, 84, 0, 79, 85, 84, 0, 70, 65, 77, 0, 26, 9], translated_message
+    assert_equal expected_translated_message, translated_message
   end
 
   def test_derotate_message_outputs_decrypted_index_array

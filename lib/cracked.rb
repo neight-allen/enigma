@@ -10,23 +10,22 @@ class Cracked
 
   def simplify
     length = message.length
-    if length% 4 == 0
+    e = d = nil
+    case length % 4
+    when 0
       e = message[-4..-1].chars
       d = "nd..".chars
-      [e, d]
-    elsif length% 4 == 1
+    when 1
       e = message[-5..-2].chars
       d = "end.".chars
-      [e, d]
-    elsif length% 4 == 2
+    when 2
       e = message[-6..-3].chars
       d = ".end".chars
-      [e, d]
-    elsif length% 4 == 3
+    when 3
       e = message[-7..-4].chars
       d = "..en".chars
-      [e, d]
     end
+    [e, d]
   end
 
   def message_indexes(char_array)

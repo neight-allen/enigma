@@ -4,10 +4,14 @@ require "./lib/encryptor.rb"
 
 class EncryptorTest < Minitest::Test
 
+  def setup
+    @encryptor = Encryptor.new
+  end
+
   def test_encryptor_is_initialized_with_default_date_and_key
-    encryptor = Encryptor.new
-    encryptor_date = encryptor.date
-    encryptor_key = encryptor.key
+    # encryptor = Encryptor.new
+    encryptor_date = @encryptor.date
+    encryptor_key = @encryptor.key
 
     assert_equal "3056", encryptor_date.date
     assert_equal 5, encryptor_key.key.length

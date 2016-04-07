@@ -38,4 +38,8 @@ class RotaionsGeneratorTest < Minitest::Test
 
     assert_equal 4, rotations.count
   end
+
+  class RotationsGenerator
+    attr_reader :key, :date
+  end
 end

@@ -1,7 +1,7 @@
 require "./lib/date_offset_calculator"
 
 class RotationsGenerator
-  attr_reader :rotations, :key, :date
+  attr_reader :rotations
 
   def initialize(key=KeyGenerator.new, date=DateOffsetCalculator.new)
     @key = key
